@@ -2,14 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const Color black = Color(0xFF000000);
-const Color white = Color(0xFFFFFFFF);
-const Color primaryColor = Color(0xfff260c1);
-const Color secondaryColor = Color(0xffAAF0FF);
-const Color red = Color(0xffCF4744);
-const Color lightBlue = Color(0xffD0FFFF);
-const Color lightPink = Color(0xffFFD1EF);
+class AppColor {
+  final Color white = const Color(0xFFFFFFFF);
+  final Color black = const Color(0xFF000000);
+  final Color primaryColor = const Color(0xfff260c1);
+  final Color secondaryColor = const Color(0xffAAF0FF);
+  final Color red = const Color(0xffCF4744);
+  final Color lightBlue = const Color(0xffD0FFFF);
+  final Color lightPink = const Color(0xffFFD1EF);
+
 // const Color bgColor = Color(0xffd4c9ff);
+}
 // const Color bgColor2 = Color(0xffe0d9ff);
 
 class Palette {

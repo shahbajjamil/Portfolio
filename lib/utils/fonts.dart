@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,6 +35,38 @@ TextStyle b30_white() {
   );
 }
 
+TextStyle n30_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.normal,
+    fontSize: 30,
+    color: Colors.black,
+  );
+}
+
+// TextStyle b64_black() {
+//   return GoogleFonts.poppins(
+//     fontWeight: FontWeight.bold,
+//     fontSize: 64,
+//     color: Colors.black,
+//   );
+// }
+
+TextStyle n50_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.normal,
+    fontSize: 50,
+    color: Colors.black,
+  );
+}
+
+TextStyle sb50_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 50,
+    color: Colors.black,
+  );
+}
+
 TextStyle b64_black() {
   return GoogleFonts.poppins(
     fontWeight: FontWeight.bold,
@@ -41,26 +75,10 @@ TextStyle b64_black() {
   );
 }
 
-TextStyle n72_black() {
+TextStyle m25_black() {
   return GoogleFonts.poppins(
-    fontWeight: FontWeight.normal,
-    fontSize: 72,
-    color: Colors.black,
-  );
-}
-
-TextStyle sb72_black() {
-  return GoogleFonts.poppins(
-    fontWeight: FontWeight.w600,
-    fontSize: 72,
-    color: Colors.black,
-  );
-}
-
-TextStyle b72_black() {
-  return GoogleFonts.poppins(
-    fontWeight: FontWeight.bold,
-    fontSize: 72,
+    fontWeight: FontWeight.w500,
+    fontSize: 25,
     color: Colors.black,
   );
 }
