@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/home/about/about_me.dart';
 import 'package:portfolio/screens/home/appbar.dart';
 import 'package:portfolio/screens/home/info/info.dart';
-import 'package:portfolio/utils/color.dart';
-import 'package:portfolio/utils/constants.dart';
-import 'package:portfolio/utils/fonts.dart';
-import 'package:portfolio/widget/circle.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,13 +14,18 @@ class HomePage extends StatelessWidget {
       // appBar: AppBar(
       //   title: Text("MD Shahbaj Jamil"),
       // ),
-      body: Column(
-        children: [
-          Appbar(),
-          InfoPage(),
-        ],
+      body: Container(
+        height: size.height,
+        width: double.infinity,
+        child: SingleChildScrollView(
+            child: Column(
+          children: [
+            Appbar(),
+            InfoPage(),
+            AboutMe(),
+          ],
+        )),
       ),
     );
   }
 }
-

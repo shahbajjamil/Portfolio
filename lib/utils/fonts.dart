@@ -27,6 +27,14 @@ TextStyle n20_white() {
   );
 }
 
+TextStyle n20_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.normal,
+    fontSize: 20,
+    color: Colors.black,
+  );
+}
+
 TextStyle b30_white() {
   return GoogleFonts.poppins(
     fontWeight: FontWeight.bold,
@@ -39,6 +47,13 @@ TextStyle n30_black() {
   return GoogleFonts.poppins(
     fontWeight: FontWeight.normal,
     fontSize: 30,
+    color: Colors.black,
+  );
+}
+TextStyle n25_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.normal,
+    fontSize: 25,
     color: Colors.black,
   );
 }
@@ -67,10 +82,10 @@ TextStyle sb50_black() {
   );
 }
 
-TextStyle b64_black() {
+TextStyle b45_black() {
   return GoogleFonts.poppins(
     fontWeight: FontWeight.bold,
-    fontSize: 64,
+    fontSize: 45,
     color: Colors.black,
   );
 }
