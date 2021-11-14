@@ -92,6 +92,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
                   SizedBox(height: padding * 2),
                   Button(
+                    textColor: true,
                     text: "Download CV",
                     onClicked: () {
                       print("Download CV");
@@ -106,4 +107,3 @@ class _AboutMeState extends State<AboutMe> {
     );
   }
 }
-

@@ -50,11 +50,28 @@ TextStyle n30_black() {
     color: Colors.black,
   );
 }
+
 TextStyle n25_black() {
   return GoogleFonts.poppins(
     fontWeight: FontWeight.normal,
     fontSize: 25,
     color: Colors.black,
+  );
+}
+
+TextStyle sb25_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 25,
+    color: Colors.black,
+  );
+}
+
+TextStyle sb25_grey() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 25,
+    color: Colors.grey,
   );
 }
 

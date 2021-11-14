@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/screens/home/about/about_me.dart';
 import 'package:portfolio/screens/home/appbar.dart';
 import 'package:portfolio/screens/home/info/info.dart';
+import 'package:portfolio/screens/home/project/project.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,9 +21,10 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
             child: Column(
           children: [
-            Appbar(),
-            InfoPage(),
-            AboutMe(),
+            // Appbar(),
+            // InfoPage(),
+            // AboutMe(),
+            Project(),
           ],
         )),
       ),
