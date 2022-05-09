@@ -20,10 +20,10 @@ class HomePage extends StatelessWidget {
         width: double.infinity,
         child: SingleChildScrollView(
             child: Column(
-          children: [
-            // Appbar(),
-            // InfoPage(),
-            // AboutMe(),
+          children: const [
+            Appbar(),
+            InfoPage(),
+            AboutMe(),
             Project(),
           ],
         )),
