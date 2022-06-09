@@ -27,8 +27,8 @@ class _AboutMeState extends State<AboutMe> {
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
-            AppColor().lightPink,
-            AppColor().white,
+            AppColor.lightPink,
+            AppColor.white,
           ],
         ),
       ),

@@ -10,7 +10,7 @@ class Button extends StatelessWidget {
     required this.onClicked,
     this.color,
     this.shadowColor,
-   required this.textColor,
+    this.textColor=true,
   }) : super(key: key);
   final String text;
   final VoidCallback onClicked;
@@ -22,9 +22,9 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: color ?? AppColor().red,
+        primary: color ?? AppColor.red,
         elevation: 10,
-        shadowColor: shadowColor ?? AppColor().black,
+        shadowColor: shadowColor ?? AppColor.black,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(padding / 3)),
         padding: EdgeInsets.symmetric(

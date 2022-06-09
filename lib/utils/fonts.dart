@@ -3,6 +3,14 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+TextStyle b40_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.bold,
+    fontSize: 60,
+    color: Colors.black,
+  );
+}
+
 TextStyle b20_black() {
   return GoogleFonts.poppins(
     fontWeight: FontWeight.w600,

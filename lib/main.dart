@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Portfolio',
       theme: ThemeData(
         primarySwatch: Palette.myColor,
-        primaryColor: AppColor().primaryColor,
+        primaryColor: AppColor.primaryColor,
         // colorScheme: ColorScheme.fromSwatch(
         //   primarySwatch: Colors.blue,
         // ).copyWith(

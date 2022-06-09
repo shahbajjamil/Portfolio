@@ -3,13 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppColor {
-  final Color white = const Color(0xFFFFFFFF);
-  final Color black = const Color(0xFF000000);
-  final Color primaryColor = const Color(0xfff260c1);
-  final Color secondaryColor = const Color(0xffAAF0FF);
-  final Color red = const Color(0xffCF4744);
-  final Color lightBlue = const Color(0xffD0FFFF);
-  final Color lightPink = const Color(0xffFFD1EF);
+  AppColor._();
+  static Color white = const Color(0xFFFFFFFF);
+  static Color black = const Color(0xFF000000);
+  static Color primaryColor = const Color(0xfff260c1);
+  static Color secondaryColor = const Color(0xffAAF0FF);
+  static Color red = const Color(0xffDB5250);
+  static Color lightBlue = const Color(0xffD0FFFF);
+  static Color lightPink = const Color(0xffFFD1EF);
 
 // const Color bgColor = Color(0xffd4c9ff);
 }

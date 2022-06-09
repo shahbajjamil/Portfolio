@@ -25,7 +25,7 @@ class _ProjectState extends State<Project> {
     final List<Widget> projectSlider = projectList
         .map(
           (item) => Container(
-            // color: AppColor().black,
+            // color: AppColor.black,
             height: size.height - (size.height * 0.1 + padding * 6),
             child: Stack(
               children: [
@@ -37,11 +37,11 @@ class _ProjectState extends State<Project> {
                     padding: EdgeInsets.fromLTRB(
                         padding, padding * 2, padding, padding),
                     decoration: BoxDecoration(
-                      color: AppColor().lightBlue,
+                      color: AppColor.lightBlue,
                       borderRadius: BorderRadius.circular(padding),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColor().black.withOpacity(0.3),
+                          color: AppColor.black.withOpacity(0.3),
                           blurRadius: 10,
                           offset: Offset(0, 5),
                         ),
@@ -68,11 +68,11 @@ class _ProjectState extends State<Project> {
                     horizontal: doublePadding * 2,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColor().lightPink,
+                    color: AppColor.lightPink,
                     borderRadius: BorderRadius.circular(padding),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColor().black.withOpacity(0.3),
+                        color: AppColor.black.withOpacity(0.3),
                         blurRadius: 10,
                         offset: Offset(0, 5),
                       ),
@@ -84,10 +84,10 @@ class _ProjectState extends State<Project> {
                       // image container
                       Container(
                         decoration: BoxDecoration(
-                          color: AppColor().lightBlue,
+                          color: AppColor.lightBlue,
                           boxShadow: [
                             BoxShadow(
-                              color: AppColor().black.withOpacity(0.3),
+                              color: AppColor.black.withOpacity(0.3),
                               blurRadius: padding,
                             )
                           ],
@@ -103,7 +103,7 @@ class _ProjectState extends State<Project> {
                       Container(
                         width: size.width * 0.37,
                         height: size.height * 0.5,
-                        // color: AppColor().lightBlue,
+                        // color: AppColor.lightBlue,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -155,8 +155,8 @@ class _ProjectState extends State<Project> {
                 Button(
                   text: "Full Project",
                   textColor: false,
-                  color: AppColor().lightBlue,
-                  shadowColor: AppColor().primaryColor,
+                  color: AppColor.lightBlue,
+                  shadowColor: AppColor.primaryColor,
                   onClicked: () {
                     print("full project");
                   },
@@ -184,8 +184,9 @@ class _ProjectState extends State<Project> {
                       });
                     }),
               ),
+              // TODO: bring to the bottom < | >
               Container(
-                // color: AppColor().lightBlue,
+                // color: AppColor.lightBlue,
                 padding: EdgeInsets.all(padding * 2),
                 height: size.height - (size.height * 0.1 + padding * 6),
                 child: Row(

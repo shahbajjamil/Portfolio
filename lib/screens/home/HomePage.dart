@@ -4,6 +4,8 @@ import 'package:portfolio/screens/home/appbar.dart';
 import 'package:portfolio/screens/home/info/info.dart';
 import 'package:portfolio/screens/home/project/project.dart';
 
+import 'experience/experience.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -21,10 +23,11 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
             child: Column(
           children: const [
-            Appbar(),
-            InfoPage(),
-            AboutMe(),
-            Project(),
+            // Appbar(),
+            // InfoPage(),
+            // AboutMe(),
+            // Project(),
+            Experience()
           ],
         )),
       ),

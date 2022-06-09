@@ -20,8 +20,8 @@ class SmallCircle extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            AppColor().red.withOpacity(0.5),
-            AppColor().secondaryColor,
+            AppColor.red.withOpacity(0.5),
+            AppColor.secondaryColor,
           ],
         ),
       ),
@@ -48,8 +48,8 @@ class BigCircle extends StatelessWidget {
           begin: Alignment.topRight,
           end: Alignment.bottomCenter,
           colors: [
-            AppColor().red.withOpacity(0.2),
-            AppColor().secondaryColor,
+            AppColor.red.withOpacity(0.2),
+            AppColor.secondaryColor,
           ],
         ),
       ),

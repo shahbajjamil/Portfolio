@@ -22,9 +22,9 @@ class InfoPage extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            AppColor().secondaryColor,
-            AppColor().lightPink,
-            AppColor().white,
+            AppColor.secondaryColor,
+            AppColor.lightPink,
+            AppColor.white,
           ],
         ),
       ),
@@ -68,7 +68,7 @@ class InfoPage extends StatelessWidget {
                         alignment: Alignment.center,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: AppColor().red,
+                            primary: AppColor.red,
                             elevation: 10,
                             shape: RoundedRectangleBorder(
                                 borderRadius:
@@ -123,9 +123,9 @@ class MyPainter extends CustomPainter {
         Offset(size.width * 0.9, 0),
         Offset(-size.width * 0.01, 0),
         [
-          AppColor().primaryColor.withOpacity(0.6),
-          // AppColor().red.withOpacity(0.8),
-          AppColor().lightBlue,
+          AppColor.primaryColor.withOpacity(0.6),
+          // AppColor.red.withOpacity(0.8),
+          AppColor.lightBlue,
         ],
       );
     final rect = Rect.fromCircle(
