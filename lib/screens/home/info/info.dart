@@ -5,10 +5,27 @@ import 'package:portfolio/utils/fonts.dart';
 import 'package:portfolio/widget/circle.dart';
 import 'dart:ui' as ui;
 
-class InfoPage extends StatelessWidget {
+class InfoPage extends StatefulWidget {
   const InfoPage({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<InfoPage> createState() => _InfoPageState();
+}
+
+class _InfoPageState extends State<InfoPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this, // the SingleTickerProviderStateMixin
+      duration: Duration(seconds: 10),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

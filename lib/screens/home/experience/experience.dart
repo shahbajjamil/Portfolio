@@ -44,10 +44,12 @@ class _ExperienceState extends State<Experience> {
           Positioned(
               top: -5,
               left: -5,
-              child: Image.asset(
-                'assets/images/bgsplash.png',
-                // width: size.width * 5 + 20,
-                scale: 1.3,
+              child: Container(
+                width: size.width / 2,
+                child: Image.asset(
+                  'assets/images/bgsplash.png',
+                  // width: size.width * 5 + 20,
+                ),
               )),
           Row(
             children: [
