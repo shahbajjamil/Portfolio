@@ -3,6 +3,7 @@ import 'package:portfolio/screens/home/about/about_me.dart';
 import 'package:portfolio/screens/home/appbar.dart';
 import 'package:portfolio/screens/home/info/info.dart';
 import 'package:portfolio/screens/home/project/project.dart';
+import 'package:portfolio/screens/home/timeline/timeline.dart';
 
 import 'experience/experience.dart';
 import 'skill_hobbies/hobbies.dart';
@@ -38,7 +39,8 @@ class HomePage extends StatelessWidget {
             // AboutMe(),
             // Project(),
             // Experience(),
-            SkillHobbies(),
+            // SkillHobbies(),
+            TimeLine(),
           ],
           // itemBuilder: (context, index) {
 

@@ -29,6 +29,37 @@ class SmallCircle extends StatelessWidget {
   }
 }
 
+class BlueCircle extends StatelessWidget {
+  const BlueCircle({
+    Key? key,
+    required this.radius,
+  }) : super(key: key);
+
+  final double radius;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: radius,
+      height: radius,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            AppColor.lightPink,
+            AppColor.red,
+            Colors.grey.withOpacity(0.5),
+            // AppColor.blue,
+            AppColor.blue,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class BigCircle extends StatelessWidget {
   const BigCircle({
     Key? key,
