@@ -41,7 +41,7 @@ class SkillsCard extends StatelessWidget {
                 aspectRatio: 1,
                 child: CircularProgressIndicator(
                   value: value,
-                  strokeWidth: 8,
+                  strokeWidth: 6,
                   backgroundColor: lighten(color, 0.3),
                   color: color,
                 ),

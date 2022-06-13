@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/model/hobbies_skills.dart';
 import 'package:portfolio/screens/home/skill_hobbies/widgets/skill_card.dart';
+import 'package:portfolio/widget/circle.dart';
 
 import '../../../utils/color.dart';
 import 'widgets/hobbies_card.dart';
@@ -30,11 +31,30 @@ class _SkillHobbiesState extends State<SkillHobbies> {
           ],
         ),
       ),
-      child: Row(
+      child: Stack(
         children: [
-          const Expanded(flex: 4, child: Hobby()),
-          Expanded(flex: 4, child: Skill()),
-          Expanded(flex: 3, child: Container(color: Colors.yellow)),
+          Positioned(
+              bottom: 0,
+              top: 0,
+              right: -30,
+              child: BigCircle(radius: size.width * 0.35)),
+          Row(
+            children: [
+              const Expanded(flex: 4, child: Hobby()),
+              const Expanded(flex: 4, child: Skill()),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  decoration: BoxDecoration(
+                    // color: Colors.yellow,
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/man-full.png"),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
