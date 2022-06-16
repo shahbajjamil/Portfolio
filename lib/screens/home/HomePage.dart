@@ -5,7 +5,9 @@ import 'package:portfolio/screens/home/info/info.dart';
 import 'package:portfolio/screens/home/project/project.dart';
 import 'package:portfolio/screens/home/timeline/timeline.dart';
 
+import 'contact/contact_me.dart';
 import 'experience/experience.dart';
+import 'footer/footer.dart';
 import 'skill_hobbies/hobbies.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,51 +28,39 @@ class HomePage extends StatelessWidget {
       body: Container(
         height: size.height,
         width: double.infinity,
-        child: PageView(
-          scrollDirection: Axis.vertical,
-          controller: pageController,
-          children: [
-            // Column(
-            //   children: [
-            //     Appbar(),
-            //     InfoPage(),
-            //   ],
-            // ),
-            // AboutMe(),
-            // Project(),
-            // Experience(),
-            // SkillHobbies(),
-            TimeLine(),
-          ],
-          // itemBuilder: (context, index) {
-
-          // switch (index) {
-          //   case 0:
-          //     return AboutMe();
-          //   case 1:
-          //     return Experience();
-          //   case 2:
-          //     return Project();
-          //   case 3:
-          //     return SkillHobbies();
-          //   case 4:
-          //   // return Info();
-          //   default:
-          //     return AboutMe();
-          // }
-          // },
-        ),
-        // child: SingleChildScrollView(
-        //     child: Column(
-        //   children: const [
-        //     Appbar(),
-        //     InfoPage(),
+        // child: PageView(
+        //   scrollDirection: Axis.vertical,
+        //   controller: pageController,
+        //   children: [
+        //     Column(
+        //       children: [
+        //         Appbar(),
+        //         InfoPage(),
+        //       ],
+        //     ),
         //     AboutMe(),
         //     Project(),
         //     Experience(),
         //     SkillHobbies(),
+        //     TimeLine(),
+        //     ContactMe(),
+        //     Footer(),
         //   ],
-        // )),
+
+        // ),
+        child: SingleChildScrollView(
+            child: Column(
+          children: [
+            Column(children: [Appbar(), InfoPage()]),
+            AboutMe(),
+            Project(),
+            Experience(),
+            SkillHobbies(),
+            TimeLine(),
+            ContactMe(),
+            Footer(),
+          ],
+        )),
       ),
     );
   }

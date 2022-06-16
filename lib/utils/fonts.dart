@@ -10,6 +10,13 @@ TextStyle b40_black() {
     color: Colors.black,
   );
 }
+TextStyle b35_black() {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.bold,
+    fontSize: 40,
+    color: Colors.black,
+  );
+}
 
 TextStyle b20_black() {
   return GoogleFonts.poppins(

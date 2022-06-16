@@ -1,9 +1,11 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:portfolio/model/hobbies_skills.dart';
+import 'package:portfolio/screens/home/timeline/widget/timeline.dart';
 import 'package:portfolio/utils/color.dart';
 import 'package:portfolio/utils/screen_size.dart';
 
+import '../../../model/time_line_model.dart';
 import '../../../widget/circle.dart';
 
 class TimeLine extends StatefulWidget {
@@ -56,15 +58,19 @@ class _TimeLineState extends State<TimeLine> {
                 ),
                 Expanded(
                   child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: timelineData.length,
                     itemBuilder: (context, index) {
                       return TimeLineTile(
-                        date: "2014 - 2016",
                         index: index,
-                        title: "Secondary School Education",
-                        subtitle: "Ranchi, Jharkhand",
-                        barColor: Colors.red,
-                        logoColor: Colors.green,
+                        totalLength: timelineData.length,
+                        date: timelineData[index].date,
+                        title: timelineData[index].title,
+                        subtitle: timelineData[index].subtitle,
+                        icon: timelineData[index].icon,
+                        barColor: Colors.primaries[
+                            Random().nextInt(Colors.primaries.length)],
+                        logoColor: Colors.primaries[
+                            Random().nextInt(Colors.primaries.length)],
                       );
                     },
                   ),
@@ -87,14 +93,20 @@ class TimeLineTile extends StatelessWidget {
     required this.subtitle,
     required this.barColor,
     required this.logoColor,
+    // required this.gradient,
+    required this.totalLength,
+    required this.icon,
   }) : super(key: key);
-  final int index;
 
   final String date;
   final String title;
   final String subtitle;
   final Color barColor;
   final Color logoColor;
+  final IconData icon;
+  // final Gradient gradient;
+  final int index;
+  final int totalLength;
 
   @override
   Widget build(BuildContext context) {
@@ -114,168 +126,26 @@ class TimeLineTile extends StatelessWidget {
                   subtitle: subtitle,
                   barColor: barColor,
                   logoColor: logoColor,
+                  // gradient: gradient,
+                  icon: icon,
+                  index: index,
+                  totalLength: totalLength,
                 ),
-          const CenterLine(),
+          CenterLine(index: index, totalLength: totalLength),
           index % 2 == 0
               ? TimeLineCard(
                   title: title,
                   subtitle: subtitle,
                   barColor: barColor,
                   logoColor: logoColor,
+                  icon: icon,
+                  // gradient: gradient,
+                  index: index,
+                  totalLength: totalLength,
                 )
               : DateView(date: date, index: index),
         ],
       ),
-    );
-  }
-}
-
-class TimeLineCard extends StatelessWidget {
-  const TimeLineCard({
-    Key? key,
-    required this.title,
-    required this.subtitle,
-    required this.barColor,
-    required this.logoColor,
-  }) : super(key: key);
-
-  final String title;
-  final String subtitle;
-  final Color barColor;
-  final Color logoColor;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = screenSize(context);
-
-    return Container(
-      width: size.width * 0.25,
-      // height: 80,
-      margin: const EdgeInsets.symmetric(vertical: 15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: AppColor.white,
-        boxShadow: [
-          BoxShadow(
-            offset: const Offset(0, 10),
-            color: AppColor.black.withOpacity(0.3),
-            blurRadius: 10,
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            width: 10,
-            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            decoration: BoxDecoration(
-              color: barColor,
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          Container(
-            width: 60,
-            height: 60,
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.fromLTRB(0, 10, 15, 10),
-            decoration: BoxDecoration(color: logoColor, shape: BoxShape.circle),
-            child: const FittedBox(child: Icon(Icons.mark_email_read_sharp)),
-          ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w900,
-                    color: AppColor.black,
-                  ),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                    color: AppColor.black,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class DateView extends StatelessWidget {
-  const DateView({
-    Key? key,
-    required this.index,
-    required this.date,
-  }) : super(key: key);
-
-  final int index;
-  final String date;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = screenSize(context);
-
-    return Container(
-      width: size.width * 0.25,
-      // height: 80,
-      child: Row(
-        mainAxisAlignment:
-            index % 2 == 0 ? MainAxisAlignment.end : MainAxisAlignment.start,
-        children: [
-          const Icon(Icons.calendar_today_outlined),
-          const SizedBox(width: 10),
-          Text(
-            date,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: AppColor.black,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CenterLine extends StatelessWidget {
-  const CenterLine({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(width: 8, color: AppColor.darkRed),
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 50),
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            boxShadow: [
-              // BoxShadow(color: AppColor.red, spreadRadius: 24),
-              // BoxShadow(color: AppColor.blue, spreadRadius: 16),s
-              BoxShadow(color: AppColor.red, spreadRadius: 8),
-            ],
-            border: Border.all(color: AppColor.white, width: 8),
-            color: AppColor.red,
-            shape: BoxShape.circle,
-          ),
-        ),
-      ],
     );
   }
 }
