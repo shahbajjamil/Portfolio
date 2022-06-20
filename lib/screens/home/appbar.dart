@@ -7,7 +7,7 @@ class Appbar extends StatelessWidget {
   const Appbar({
     Key? key,
   }) : super(key: key);
-  
+
   Widget buildMenuItem({
     required String text,
     // required IconData icon,
@@ -71,6 +71,38 @@ class Appbar extends StatelessWidget {
             },
           ),
           Spacer(flex: 1),
+        ],
+      ),
+    );
+  }
+}
+
+class AppBarTabMode extends StatelessWidget {
+  const AppBarTabMode({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: padding),
+      height: 80,
+      color: AppColor.secondaryColor,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Spacer(flex: 1),
+
+          Image.asset(
+            "assets/images/logo.png",
+            scale: 1.5,
+          ),
+          IconButton(
+            onPressed: () {},
+            iconSize: 50,
+            icon: Icon(Icons.menu),
+          ),
+          // Spacer(flex: 1),
         ],
       ),
     );

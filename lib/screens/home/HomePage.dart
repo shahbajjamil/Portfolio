@@ -1,10 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/home/about/about_me.dart';
 import 'package:portfolio/screens/home/appbar.dart';
 import 'package:portfolio/screens/home/info/info.dart';
 import 'package:portfolio/screens/home/project/project.dart';
 import 'package:portfolio/screens/home/timeline/timeline.dart';
+import 'package:portfolio/utils/responsive_layout.dart';
 
+import '../../utils/screen_size.dart';
 import 'contact/contact_me.dart';
 import 'experience/experience.dart';
 import 'footer/footer.dart';
@@ -20,6 +24,15 @@ class HomePage extends StatelessWidget {
       initialPage: 0,
       keepPage: true,
     );
+    print("-------------------------");
+    log('Size :$size');
+    log('isTinyHeightLimit :${ResponsiveLayout.isTinyHeightLimit(context)}');
+    log('isTinyLimit :${ResponsiveLayout.isTinyLimit(context)}');
+    log('isPhone :${ResponsiveLayout.isPhone(context)}');
+    log('isTablet :${ResponsiveLayout.isTablet(context)}');
+    log('isLargeTablet :${ResponsiveLayout.isLargeTablet(context)}');
+    log('isComputer :${ResponsiveLayout.isComputer(context)}');
+
     return Scaffold(
       // backgroundColor: AppColor().secondaryColor,
       // appBar: AppBar(
@@ -51,7 +64,19 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
             child: Column(
           children: [
-            Column(children: [Appbar(), InfoPage()]),
+            Column(
+              children: [
+                Text("${screenWidth(context)}"),
+                ResponsiveLayout(
+                  tiny: Container(),
+                  tablet: AppBarTabMode(),
+                  phone: AppBarTabMode(),
+                  largetTablet: AppBarTabMode(),
+                  computer: Appbar(),
+                ),
+                InfoPage(),
+              ],
+            ),
             AboutMe(),
             Project(),
             Experience(),

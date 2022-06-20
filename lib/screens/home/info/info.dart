@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/color.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/fonts.dart';
+import 'package:portfolio/utils/responsive_layout.dart';
 import 'package:portfolio/widget/circle.dart';
 import 'dart:ui' as ui;
 
@@ -22,8 +23,8 @@ class _InfoPageState extends State<InfoPage>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      vsync: this, // the SingleTickerProviderStateMixin
-      duration: Duration(seconds: 10),
+      vsync: this,
+      duration: const Duration(seconds: 10),
     );
   }
 
@@ -45,39 +46,110 @@ class _InfoPageState extends State<InfoPage>
           ],
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Stack(
         children: [
-          Stack(
+          Positioned(
+            top: size.height * 0.22,
+            child: SmallCircle(
+                radius: ResponsiveLayout.isTablet(context)
+                    ? size.width * 0.2
+                    : ResponsiveLayout.isPhone(context)
+                        ? size.width * 0.4
+                        : size.width * 0.1),
+          ),
+          Positioned(
+            right: 0,
+            bottom: size.width / 4,
+            child: Container(
+              width: ResponsiveLayout.isComputer(context)
+                  ? size.width * 0.5
+                  : ResponsiveLayout.isTablet(context) ||
+                          ResponsiveLayout.isPhone(context)
+                      ? size.width * 0.8
+                      : size.width * 0.6,
+              child: CustomPaint(painter: MyPainter()),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Positioned(
-                  top: size.height * 0.22,
-                  // left: size.width * 0.1,
-                  child: SmallCircle(radius: size.width * 0.1)),
+              Container(
+                width: ResponsiveLayout.isComputer(context)
+                    ? size.width * 0.5
+                    : ResponsiveLayout.isTablet(context)
+                        ? size.width * 0.8
+                        : size.width * 0.9,
+                alignment: Alignment.bottomRight,
+                child: Image.asset("assets/images/man-BG.png"),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: ResponsiveLayout.isPhone(context)
+                ? MainAxisAlignment.center
+                : MainAxisAlignment.start,
+            crossAxisAlignment: ResponsiveLayout.isPhone(context) ||
+                    ResponsiveLayout.isTablet(context)
+                ? CrossAxisAlignment.start
+                : CrossAxisAlignment.center,
+            children: [
               Padding(
-                padding: const EdgeInsets.all(padding),
+                padding: EdgeInsets.all(
+                    ResponsiveLayout.isPhone(context) ? 0 : padding),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: ResponsiveLayout.isPhone(context) ||
+                          ResponsiveLayout.isTablet(context)
+                      ? MainAxisAlignment.start
+                      : MainAxisAlignment.center,
                   children: [
                     Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Hello, I’m",
-                        style: n50_black(),
-                        textAlign: TextAlign.left,
+                      padding: EdgeInsets.all(ResponsiveLayout.isPhone(context)
+                          ? padding / 2
+                          : padding),
+                      margin: EdgeInsets.only(
+                        top:
+                            ResponsiveLayout.isPhone(context) ? padding * 5 : 0,
+                      ),
+                      decoration: BoxDecoration(
+                          color: const Color(0x77FFFFFF),
+                          borderRadius: BorderRadius.circular(padding),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.1),
+                                blurRadius: 5),
+                          ]),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Hello, I’m",
+                              style: ResponsiveLayout.isTablet(context) ||
+                                      ResponsiveLayout.isPhone(context)
+                                  ? n25_black()
+                                  : n50_black(),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Text(
+                            "MD Shahbaj Jamil",
+                            style: ResponsiveLayout.isTablet(context) ||
+                                    ResponsiveLayout.isPhone(context)
+                                ? sb25_black()
+                                : sb50_black(),
+                          ),
+                          Text(
+                            "I'm Flutter and Web Developer.",
+                            style: ResponsiveLayout.isTablet(context) ||
+                                    ResponsiveLayout.isPhone(context)
+                                ? n20_black()
+                                : n30_black(),
+                          ),
+                        ],
                       ),
                     ),
-                    Text(
-                      "MD Shahbaj Jamil",
-                      style: sb50_black(),
-                    ),
-                    Text(
-                      "I'm Flutter and Web Developer.",
-                      style: n30_black(),
-                    ),
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 100),
                       child: Transform.rotate(
@@ -90,7 +162,7 @@ class _InfoPageState extends State<InfoPage>
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.circular(padding / 2)),
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               vertical: padding,
                               horizontal: padding * 2,
                             ),
@@ -108,24 +180,6 @@ class _InfoPageState extends State<InfoPage>
               ),
             ],
           ),
-          Stack(
-            // fit: StackFit.loose,
-            alignment: Alignment.centerRight,
-            children: [
-              Container(
-                // color: Colors.green,
-                width: size.width * 0.5,
-                height: size.width * 0.5,
-                child: CustomPaint(
-                  painter: MyPainter(),
-                  // child: Text("text"),
-                  // size: MediaQuery.of(context).size,
-                  // size: ,
-                ),
-              ),
-              Image.asset("assets/images/man-BG.png"),
-            ],
-          ),
         ],
       ),
     );
@@ -141,18 +195,12 @@ class MyPainter extends CustomPainter {
         Offset(-size.width * 0.01, 0),
         [
           AppColor.primaryColor.withOpacity(0.6),
-          // AppColor.red.withOpacity(0.8),
           AppColor.lightBlue,
         ],
       );
     final rect = Rect.fromCircle(
-        center: Offset(size.width / 2, size.width / 2), radius: size.width / 2);
-    //   canvas.drawArc(rect, 20.0, 0.0, true, paint);
-    // final rect = Rect.fromPoints(Offset(size.height / 4, size.width / 4),
-    //     Offset(size.height / 1.5, size.width / 2));
-    // final center = Offset(size.height / 2, size.width / 2);
-    // canvas.drawCircle(center, 200, paint);
-    // canvas.drawRect(rect, paint);
+        center: Offset(size.width / 2, size.height), radius: size.width / 2);
+
     canvas.drawArc(rect, -0.5, 3.15, true, paint);
   }
 

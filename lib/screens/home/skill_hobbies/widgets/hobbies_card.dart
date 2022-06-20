@@ -19,40 +19,42 @@ class HobbiesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: AppColor.black.withOpacity(0.5),
-            blurRadius: 10,
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              color: lighten(color, 0.2),
-              shape: BoxShape.circle,
+    return FittedBox(
+      child: Container(
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: AppColor.black.withOpacity(0.5),
+              blurRadius: 10,
             ),
-            child: Icon(icon, size: 50, color: darken(color, 0.2)),
-          ),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w800,
-              color: darken(color, 0.2),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                color: lighten(color, 0.2),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, size: 50, color: darken(color, 0.2)),
             ),
-          ),
-        ],
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w800,
+                color: darken(color, 0.2),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
