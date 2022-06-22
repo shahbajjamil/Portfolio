@@ -33,6 +33,24 @@ class HomePage extends StatelessWidget {
     log('isLargeTablet :${ResponsiveLayout.isLargeTablet(context)}');
     log('isComputer :${ResponsiveLayout.isComputer(context)}');
 
+    String screenCheckUp() {
+      if (ResponsiveLayout.isTinyHeightLimit(context)) {
+        return 'Tiny Height Limit';
+      } else if (ResponsiveLayout.isTinyLimit(context)) {
+        return 'Tiny Limit';
+      } else if (ResponsiveLayout.isPhone(context)) {
+        return 'Phone';
+      } else if (ResponsiveLayout.isTablet(context)) {
+        return 'Tablet';
+      } else if (ResponsiveLayout.isLargeTablet(context)) {
+        return 'Large Tablet';
+      } else if (ResponsiveLayout.isComputer(context)) {
+        return 'Computer';
+      } else {
+        return 'Unknown';
+      }
+    }
+
     return Scaffold(
       // backgroundColor: AppColor().secondaryColor,
       // appBar: AppBar(
@@ -66,7 +84,6 @@ class HomePage extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text("${screenWidth(context)}"),
                 ResponsiveLayout(
                   tiny: Container(),
                   tablet: AppBarTabMode(),
@@ -77,6 +94,7 @@ class HomePage extends StatelessWidget {
                 InfoPage(),
               ],
             ),
+            Text("${screenWidth(context)} : ${screenCheckUp()}"),
             AboutMe(),
             Project(),
             Experience(),
