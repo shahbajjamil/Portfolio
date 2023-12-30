@@ -82,51 +82,56 @@ class _ProjectState extends State<Project> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // image container
-                      Container(
-                        decoration: BoxDecoration(
-                          color: AppColor.lightBlue,
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColor.black.withOpacity(0.3),
-                              blurRadius: padding,
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(padding),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(item.imageUrl),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: AppColor.lightBlue,
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColor.black.withOpacity(0.3),
+                                blurRadius: padding,
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(padding),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(item.imageUrl),
+                            ),
                           ),
+                          width: size.width * 0.37,
+                          height: size.height * 0.5,
                         ),
-                        width: size.width * 0.37,
-                        height: size.height * 0.5,
                       ),
-                      Container(
-                        width: size.width * 0.37,
-                        height: size.height * 0.5,
-                        // color: AppColor.lightBlue,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              item.title,
-                              style: sb25_black(),
-                            ),
-                            SizedBox(height: padding),
-                            Text(
-                              item.discription,
-                              style: n20_black(),
-                            ),
-                            SizedBox(height: padding),
-                            // Spacer(),
-                            Button(
-                              text: "Full View",
-                              onClicked: () {
-                                print("full view" + item.projectUrl);
-                              },
-                              textColor: true,
-                            ),
-                          ],
+                      Expanded(
+                        child: Container(
+                          // width: size.width * 0.37,
+                          // height: size.height * 0.5,
+                          alignment: Alignment.center,
+                          // color: AppColor.lightBlue,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                item.title,
+                                style: sb25_black(),
+                              ),
+                              SizedBox(height: padding),
+                              Text(
+                                item.discription,
+                                style: n20_black(),
+                              ),
+                              SizedBox(height: padding),
+                              // Spacer(),
+                              Button(
+                                text: "Full View",
+                                onClicked: () {
+                                  print("full view" + item.projectUrl);
+                                },
+                                textColor: true,
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],
