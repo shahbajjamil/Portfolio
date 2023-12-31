@@ -20,5 +20,10 @@
         "titleBar.inactiveForeground": "#e7e7e799",
         "commandCenter.border": "#e7e7e799"
     },
-    "peacock.color": "#0f6d75"
+    "peacock.color": "#0f6d75",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+
+    },
 }

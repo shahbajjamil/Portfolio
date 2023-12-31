@@ -38,6 +38,10 @@ dependencies:
   google_fonts: ^6.1.0
   font_awesome_flutter: ^10.6.0
   carousel_slider: ^4.2.1
+  responsive_builder: ^0.7.0
+  sizer_pro: ^2.2.0
+  shared_preferences: ^2.2.2
+  provider: ^6.1.1
 
 dev_dependencies:
   flutter_test:
