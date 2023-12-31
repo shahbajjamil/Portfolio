@@ -5,3 +5,4 @@ import 'package:flutter/widgets.dart';
 
 part 'colors.dart';
 part 'app_shared_pref.dart';
+part 'app_const.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:portfolio/app_provider.dart';
 import 'package:portfolio/app_theme.dart';
 import 'package:provider/provider.dart';
@@ -14,11 +15,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: AppTheme.lightTheme,
-      themeMode: Provider.of<AppTheme>(context).themeMode,
-      home: const HomePage(),
+    return Layout(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: AppTheme.lightTheme,
+        themeMode: Provider.of<AppTheme>(context).themeMode,
+        home: const HomePage(),
+      ),
     );
   }
 }
