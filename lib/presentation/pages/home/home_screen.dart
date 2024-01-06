@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/presentation/layout/adaptive.dart';
 import 'package:portfolio/utils/functions.dart';
+import 'package:portfolio/values/app_images.dart';
 import 'package:portfolio/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../widgets/app_drawer.dart';
 import '../../widgets/nav_item.dart';
+import 'sections/header_section/header_section.dart';
 import 'sections/nav_section/nav_bar_mobile.dart';
 import 'sections/nav_section/nav_bar_web.dart';
 
@@ -58,6 +61,8 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = heightOfScreen(context);
+    double spacerHeight = screenHeight * 0.10;
     return Scaffold(
         key: _scaffoldKey,
         drawer: ResponsiveBuilder(
@@ -98,9 +103,50 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                 }
               },
             ),
-            // NavBarWeb(
-            //   navItems: navItems,
-            // ),
+            Expanded(
+              child: SingleChildScrollView(
+                controller: _scrollController,
+                child: Column(
+                  children: [
+                    Stack(
+                      children: [
+                        Positioned.fill(
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(AppImage.BLOB_BEAN_ASH),
+                          ),
+                        ),
+                        Column(
+                          children: [
+                            HeaderSection(key: navItems[0].key),
+                            SizedBox(height: spacerHeight),
+                            // VisibilityDetector(
+                            //   key: Key("about"),
+                            //   onVisibilityChanged: (visibilityInfo) {
+                            //     double visiblePercentage =
+                            //         visibilityInfo.visibleFraction * 100;
+                            //     if (visiblePercentage > 10) {
+                            //       _controller.forward();
+                            //     }
+                            //   },
+                            //   child: Container(
+                            //     key: navItems[1].key,
+                            //     child: AboutMeSection(),
+                            //   ),
+                            // ),
+                          ],
+                        )
+                      ],
+                    ),
+                    // AboutSection(),
+                    // ServicesSection(),
+                    // ProjectsSection(),
+                    // AwardsSection(),
+                    // BlogSection(),
+                  ],
+                ),
+              ),
+            ),
           ],
         ));
   }

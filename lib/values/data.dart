@@ -3,14 +3,9 @@ part of values;
 class Data {
   static List<SocialButtonData> socialData = [
     SocialButtonData(
-      tag: AppConst.TWITTER_URL,
-      iconData: FontAwesomeIcons.twitter,
-      url: AppConst.TWITTER_URL,
-    ),
-    SocialButtonData(
-      tag: AppConst.FACEBOOK_URL,
-      iconData: FontAwesomeIcons.facebook,
-      url: AppConst.FACEBOOK_URL,
+      tag: AppConst.youtubeURL,
+      iconData: FontAwesomeIcons.youtube,
+      url: AppConst.youtubeURL,
     ),
     SocialButtonData(
       tag: AppConst.LINKED_IN_URL,
@@ -18,10 +13,20 @@ class Data {
       url: AppConst.LINKED_IN_URL,
     ),
     SocialButtonData(
+      tag: AppConst.githubURL,
+      iconData: FontAwesomeIcons.github,
+      url: AppConst.githubURL,
+    ),
+    SocialButtonData(
       tag: AppConst.INSTAGRAM_URL,
       iconData: FontAwesomeIcons.instagram,
       url: AppConst.INSTAGRAM_URL,
     ),
+    // SocialButtonData(
+    //   tag: AppConst.FACEBOOK_URL,
+    //   iconData: FontAwesomeIcons.facebook,
+    //   url: AppConst.FACEBOOK_URL,
+    // ),
   ];
 
   // static List<SocialButton2Data> socialData2 = [
@@ -149,29 +154,29 @@ class Data {
   //   ),
   // ];
 
-  // static List<NimBusCardData> nimbusCardData = [
-  //   NimBusCardData(
-  //     title: AppConst.UI_UX,
-  //     subtitle: AppConst.UI_UX_DESC,
-  //     leadingIcon: Icons.done,
-  //     trailingIcon: Icons.chevron_right,
-  //   ),
-  //   NimBusCardData(
-  //     title: AppConst.PHOTOGRAPHER,
-  //     subtitle: AppConst.PHOTOGRAPHER_DESC,
-  //     leadingIcon: Icons.done,
-  //     trailingIcon: Icons.chevron_right,
-  //     circleBgColor: AppColors.yellow100,
-  //   ),
-  //   NimBusCardData(
-  //     title: AppConst.FREELANCER,
-  //     subtitle: AppConst.FREELANCER_DESC,
-  //     leadingIcon: Icons.done,
-  //     trailingIcon: Icons.chevron_right,
-  //     leadingIconColor: AppColors.black,
-  //     circleBgColor: AppColors.grey50,
-  //   ),
-  // ];
+  static List<CustomCardData> customCardData = [
+    CustomCardData(
+      title: AppConst.appDev,
+      subtitle: AppConst.appDevDesc,
+      leadingIcon: Icons.done,
+      trailingIcon: Icons.chevron_right,
+    ),
+    CustomCardData(
+      title: AppConst.backendDev,
+      subtitle: AppConst.backendDevDesc,
+      leadingIcon: Icons.done,
+      trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.yellow100,
+    ),
+    CustomCardData(
+      title: AppConst.freelancer,
+      subtitle: AppConst.freelancerDesc,
+      leadingIcon: Icons.done,
+      trailingIcon: Icons.chevron_right,
+      leadingIconColor: AppColors.black,
+      circleBgColor: AppColors.grey50,
+    ),
+  ];
 
   // static List<ProjectData> allProjects = [
   //   ProjectData(

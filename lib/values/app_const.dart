@@ -21,9 +21,12 @@ class AppConst {
   static const String emailUrl = "mailto:<$devEmail>?subject=&body=";
 
   //Header Section
-  static const String FIRST_NAME = "Ameli";
-  static const String INTRO = "Hi! I'm Ameli Nimbus -";
-  static const String POSITION = "UI/UX Designer";
+  static const String firstName = "Shahbaj";
+  static const String intro = "Hi! I'm MD $firstName Jamil -";
+  static const String position1 = "Android Developer";
+  static const String position2 = "IOS Developer";
+  static const String position3 = "Web Developer";
+  static const String position4 = "Flutter Developer";
   static const String ABOUT_DEV =
       "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs.";
   static const String ABOUT_ME_1 =
@@ -31,17 +34,17 @@ class AppConst {
   static const String ABOUT_ME_2 =
       "13 years so far, specialized in UI/UX, Branding and digital designs.";
   static const String DOWNLOAD_CV = "Download CV";
-  static const String EMAIL = "Email";
-  static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
-  static const String BEHANCE = "Behance";
-  static const String BEHANCE_ID = "behance.net/nimbus200";
-  static const String HIRE_ME_NOW = "Hire Me Now";
-  static const String UI_UX = "UI/UX Designer";
-  static const String UI_UX_DESC = "creative websites for you";
-  static const String PHOTOGRAPHER = "Photographer";
-  static const String PHOTOGRAPHER_DESC = "Awesome photo & video";
-  static const String FREELANCER = "Freelancer";
-  static const String FREELANCER_DESC = "You can hire me now";
+  static const String email = "Email";
+  // static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
+  static const String github = "Github";
+  static const String githubId = "github.com/shahbajjamil";
+  static const String hireMeNow = "Hire Me Now";
+  static const String appDev = "App Developer";
+  static const String appDevDesc = "Apps for Android and IOS";
+  static const String backendDev = "Backend Developer";
+  static const String backendDevDesc = "Backend for Mobile and Web";
+  static const String freelancer = "Freelancer";
+  static const String freelancerDesc = "You can hire me now";
 
   static const String PYTHON = "Python";
   static const String JAVA = "Java";
@@ -195,15 +198,11 @@ class AppConst {
   static const String FIND_ME = "Find me on..";
 
   //URL Links
-  static const String WEB_GENIUS_LAB_URL = "https://webgeniuslab.net/";
-  static const String BEHANCE_URL = "https://www.behance.net/";
-  static const String DRIBBLE_URL = "https://dribbble.com/";
-  static const String LINKED_IN_URL = "https:linkedin.com/in/";
-  static const String INSTAGRAM_URL = "https://www.instagram.com/";
-  static const String GITHUB_URL = "https://github.com/";
-  static const String FACEBOOK_URL = "https://facebook.com/";
-  static const String TWITTER_URL = "http://twitter.com/";
-  static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
-  static const String DESIGN_URL =
-      "https://www.behance.net/gallery/95351691/Resume-Design-03";
+
+  static const String LINKED_IN_URL = "https:linkedin.com/in/shahbaj-jamil";
+  static const String INSTAGRAM_URL = "https://www.instagram.com/shahbajjamil";
+  static const String youtubeURL = "https://www.youtube.com/@strenghtcode";
+  static const String githubURL = "https://github.com/shahbajjamil";
+  static const String FACEBOOK_URL = "https://facebook.com/shahbajjamil";
+  static const String TWITTER_URL = "http://twitter.com/shahbajjamil";
 }
