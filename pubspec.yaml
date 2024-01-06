@@ -44,6 +44,7 @@ dependencies:
   layout: ^1.0.5
   url_launcher: ^6.2.2
   feather_icons: ^1.2.0
+  go_router: ^13.0.1
 
 dev_dependencies:
   flutter_test:
