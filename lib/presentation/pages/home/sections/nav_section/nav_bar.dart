@@ -6,6 +6,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../../../../utils/functions.dart';
 import '../../../../../values/values.dart';
+import '../../../../widgets/buttons/custom_button.dart';
 import '../../../../widgets/buttons/social_button.dart';
 import '../../../../widgets/selected_indicator.dart';
 import '../../home_screen.dart';
@@ -35,11 +36,12 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
+    bool spacer = true;
     var textSize = responsiveSize(
       context,
       25.0,
-      48.0,
-      md: 40.0,
+      40.0,
+      md: 35.0,
     );
     double logoSpaceLeft =
         responsiveSize(context, logoSpaceLeftSm, logoSpaceLeftLg);
@@ -66,6 +68,7 @@ class _NavBarState extends State<NavBar> {
       menuSpacerRightLg,
       md: menuSpacerRightMd,
     );
+
     return Container(
       height: 100,
       decoration: const BoxDecoration(
@@ -92,14 +95,8 @@ class _NavBarState extends State<NavBar> {
 
           // Image.asset(AppImage.logo),
           ..._buildNavItems(),
-          ResponsiveBuilder(builder: (context, sizingInformation) {
-            double screenWidth = sizingInformation.screenSize.width;
-            if (screenWidth < (const RefinedBreakpoints().desktopSmall + 450)) {
-              return const SizedBox.shrink();
-            } else {
-              return Spacer(flex: menuSpacerRight);
-            }
-          }),
+
+          if (spacer) Spacer(flex: menuSpacerRight),
 
           ResponsiveBuilder(
             refinedBreakpoints: const RefinedBreakpoints(),
@@ -114,7 +111,7 @@ class _NavBarState extends State<NavBar> {
                     Row(
                       children: [
                         ..._buildSocialIcons(Data.socialData),
-                        const SizedBox(width: 20),
+                        // const SizedBox(width: 20),
                       ],
                     ),
                   ],
@@ -123,6 +120,14 @@ class _NavBarState extends State<NavBar> {
             },
           ),
           const VerticalDivider(color: AppColors.grey100),
+          SizedBox(width: contactBtnSpaceLeft),
+          CustomButton(
+            buttonTitle: AppConst.contactMe,
+            width: contactBtnWidth,
+            opensUrl: true,
+            url: AppConst.emailUrl,
+          ),
+          SizedBox(width: contactBtnSpaceRight),
         ],
       ),
     );
