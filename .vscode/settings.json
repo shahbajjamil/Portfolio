@@ -23,7 +23,6 @@
     "peacock.color": "#0f6d75",
     "editor.acceptSuggestionOnEnter": "on",
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
-
+        "source.fixAll": "explicit"
     },
 }

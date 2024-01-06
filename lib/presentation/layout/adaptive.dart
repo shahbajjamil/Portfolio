@@ -45,31 +45,31 @@ import 'package:layout/layout.dart';
 //           MediaQuery.of(context).size.width < 1170);
 // }
 
-// double widthOfScreen(BuildContext context) {
-//   return MediaQuery.of(context).size.width;
-// }
+double widthOfScreen(BuildContext context) {
+  return MediaQuery.of(context).size.width;
+}
 
-// double heightOfScreen(BuildContext context) {
-//   return MediaQuery.of(context).size.height;
-// }
+double heightOfScreen(BuildContext context) {
+  return MediaQuery.of(context).size.height;
+}
 
-// double assignHeight(
-//   BuildContext context,
-//   double fraction, {
-//   double additions = 0.0,
-//   double subs = 0.0,
-// }) {
-//   return (heightOfScreen(context) - (subs) + (additions)) * fraction;
-// }
+double assignHeight(
+  BuildContext context,
+  double fraction, {
+  double additions = 0.0,
+  double subs = 0.0,
+}) {
+  return (heightOfScreen(context) - (subs) + (additions)) * fraction;
+}
 
-// double assignWidth(
-//   BuildContext context,
-//   double fraction, {
-//   double additions = 0,
-//   double subs = 0,
-// }) {
-//   return (widthOfScreen(context) - (subs) + (additions)) * fraction;
-// }
+double assignWidth(
+  BuildContext context,
+  double fraction, {
+  double additions = 0,
+  double subs = 0,
+}) {
+  return (widthOfScreen(context) - (subs) + (additions)) * fraction;
+}
 
 double responsiveSize(
   BuildContext context,
@@ -88,9 +88,24 @@ double responsiveSize(
   );
 }
 
+int responsiveSizeInt(
+  BuildContext context,
+  int xs,
+  int lg, {
+  int? sm,
+  int? md,
+  int? xl,
+}) {
+  return context.layout.value(
+    xs: xs,
+    sm: sm ?? (md ?? xs), //assign md to sm if it is not null, if null assign xs
+    md: md ?? lg,
+    lg: lg,
+    xl: xl ?? lg,
+  );
+}
 
-
-// double getSidePadding(BuildContext context) {
-//   double sidePadding = assignWidth(context, 0.05);
-//   return responsiveSize(context, 30, sidePadding, md: sidePadding);
-// }
+double getSidePadding(BuildContext context) {
+  double sidePadding = assignWidth(context, 0.05);
+  return responsiveSize(context, 30, sidePadding, md: sidePadding);
+}
