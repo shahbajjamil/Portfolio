@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/presentation/layout/adaptive.dart';
-import 'package:portfolio/presentation/widgets/animated_indicator.dart';
+import 'package:portfolio/presentation/widgets/nav_item.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../../../../utils/functions.dart';
 import '../../../../../values/values.dart';
 import '../../../../widgets/buttons/custom_button.dart';
 import '../../../../widgets/buttons/social_button.dart';
-import '../../../../widgets/selected_indicator.dart';
-import '../../home_screen.dart';
 
 const double logoSpaceLeftLg = 40.0;
 const double logoSpaceLeftSm = 20.0;
@@ -25,19 +23,19 @@ const int menuSpacerRightLg = 5;
 const int menuSpacerRightMd = 4;
 const int menuSpacerRightSm = 3;
 
-class NavBar extends StatefulWidget {
-  const NavBar({super.key, required this.navItems});
+class NavBarWeb extends StatefulWidget {
+  const NavBarWeb({super.key, required this.navItems});
   final List<NavItemData> navItems;
 
   @override
-  State<NavBar> createState() => _NavBarState();
+  State<NavBarWeb> createState() => _NavBarWebState();
 }
 
-class _NavBarState extends State<NavBar> {
+class _NavBarWebState extends State<NavBarWeb> {
   @override
   Widget build(BuildContext context) {
     bool spacer = true;
-    var textSize = responsiveSize(
+    var logoTextSize = responsiveSize(
       context,
       25.0,
       40.0,
@@ -85,7 +83,7 @@ class _NavBarState extends State<NavBar> {
           Text(
             AppConst.appTextLogo,
             style: GoogleFonts.sedgwickAveDisplay(
-              fontSize: textSize,
+              fontSize: logoTextSize,
             ),
           ),
           SizedBox(width: logoSpaceRight),
@@ -94,7 +92,9 @@ class _NavBarState extends State<NavBar> {
           const Spacer(),
 
           // Image.asset(AppImage.logo),
-          ..._buildNavItems(),
+          ..._buildNavItems(
+            widget.navItems,
+          ),
 
           if (spacer) Spacer(flex: menuSpacerRight),
 
@@ -108,12 +108,8 @@ class _NavBarState extends State<NavBar> {
               } else {
                 return Row(
                   children: [
-                    Row(
-                      children: [
-                        ..._buildSocialIcons(Data.socialData),
-                        // const SizedBox(width: 20),
-                      ],
-                    ),
+                    ..._buildSocialIcons(Data.socialData),
+                    // const SizedBox(width: 20),
                   ],
                 );
               }
@@ -133,16 +129,16 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
-  List<Widget> _buildNavItems() {
-    return List.generate(widget.navItems.length, (index) {
+  List<Widget> _buildNavItems(List<NavItemData> navItems) {
+    return List.generate(navItems.length, (index) {
       List<Widget> items = [];
       items.add(
         NavItem(
-          title: widget.navItems[index].name,
-          isSelected: widget.navItems[index].isSelected,
+          title: navItems[index].name,
+          isSelected: navItems[index].isSelected,
           onTap: () => _onTapNavItem(
-            context: widget.navItems[index].key,
-            navItemName: widget.navItems[index].name,
+            context: navItems[index].key,
+            navItemName: navItems[index].name,
           ),
         ),
       );
@@ -185,82 +181,84 @@ class _NavBarState extends State<NavBar> {
   }
 }
 
-class NavItem extends StatefulWidget {
-  const NavItem({
-    super.key,
-    required this.title,
-    this.titleStyle,
-    this.titleColor = AppColors.black,
-    this.isSelected = false,
-    this.onTap,
-  });
-  final String title;
-  final TextStyle? titleStyle;
-  final Color titleColor;
-  final bool isSelected;
-  // final bool isMobile;
-  final GestureTapCallback? onTap;
+// const double indicatorWidth = Sizes.WIDTH_60;
 
-  @override
-  State<NavItem> createState() => _NavItemState();
-}
+// class NavItem extends StatefulWidget {
+//   const NavItem({
+//     super.key,
+//     required this.title,
+//     this.titleStyle,
+//     this.titleColor = AppColors.black,
+//     this.isSelected = false,
+//     this.onTap,
+//   });
+//   final String title;
+//   final TextStyle? titleStyle;
+//   final Color titleColor;
+//   final bool isSelected;
+//   // final bool isMobile;
+//   final GestureTapCallback? onTap;
 
-class _NavItemState extends State<NavItem> {
-  bool _hovering = false;
+//   @override
+//   State<NavItem> createState() => _NavItemState();
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
+// class _NavItemState extends State<NavItem> {
+//   bool _hovering = false;
 
-    var textSize = responsiveSize(
-      context,
-      14.0,
-      16.0,
-      md: 15.0,
-    );
+//   @override
+//   Widget build(BuildContext context) {
+//     TextTheme textTheme = Theme.of(context).textTheme;
 
-    return MouseRegion(
-      onEnter: (event) => _mouseEnter(true),
-      onExit: (event) => _mouseEnter(false),
-      child: InkWell(
-        onTap: widget.onTap,
-        child: Stack(
-          children: [
-            if (widget.isSelected)
-              const Positioned(
-                top: 12,
-                child: SelectedIndicator(
-                  width: 20,
-                  indicatorColor: AppColors.yellow450,
-                  height: 6,
-                  opacity: 0.85,
-                ),
-              )
-            else
-              Positioned(
-                top: 12,
-                child: AnimatedHoverIndicator(
-                  width: 20,
-                  isHover: _hovering,
-                ),
-              ),
-            Text(
-              widget.title,
-              style: widget.titleStyle ??
-                  textTheme.titleMedium!.copyWith(
-                    color: widget.titleColor,
-                    fontSize: textSize,
-                  ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+//     var textSize = responsiveSize(
+//       context,
+//       Sizes.TEXT_SIZE_14,
+//       Sizes.TEXT_SIZE_16,
+//       md: Sizes.TEXT_SIZE_15,
+//     );
 
-  void _mouseEnter(bool hovering) {
-    setState(() {
-      _hovering = hovering;
-    });
-  }
-}
+//     return MouseRegion(
+//       onEnter: (event) => _mouseEnter(true),
+//       onExit: (event) => _mouseEnter(false),
+//       child: InkWell(
+//         onTap: widget.onTap,
+//         child: Stack(
+//           children: [
+//             if (widget.isSelected)
+//               const Positioned(
+//                 top: Sizes.SIZE_12,
+//                 child: SelectedIndicator(
+//                   width: 20,
+//                   indicatorColor: AppColors.yellow450,
+//                   height: 6,
+//                   opacity: 0.85,
+//                 ),
+//               )
+//             else
+//               Positioned(
+//                 top: Sizes.SIZE_12,
+//                 child: AnimatedHoverIndicator(
+//                   width: 20,
+//                   isHover: _hovering,
+//                 ),
+//               ),
+//             Text(
+//               widget.title,
+//               style: widget.titleStyle ??
+//                   textTheme.titleMedium!.copyWith(
+//                     color: widget.titleColor,
+//                     fontSize: textSize,
+//                   ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   void _mouseEnter(bool hovering) {
+//     setState(() {
+//       _hovering = hovering;
+//     });
+//   }
+// }

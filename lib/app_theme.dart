@@ -91,65 +91,67 @@ class AppTheme extends ChangeNotifier {
 
   static const Color _textColor = AppColors.black;
 
+  static TextStyle fontType = fontIbmPlexMono;
+
   static TextTheme textTheme() {
     return TextTheme(
-      displayLarge: font.copyWith(
+      displayLarge: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      displayMedium: font.copyWith(
+      displayMedium: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      displaySmall: font.copyWith(
+      displaySmall: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      headlineLarge: font.copyWith(
+      headlineLarge: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      headlineMedium: font.copyWith(
+      headlineMedium: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      headlineSmall: font.copyWith(
+      headlineSmall: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      titleLarge: font.copyWith(
+      titleLarge: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      titleMedium: font.copyWith(
+      titleMedium: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      titleSmall: font.copyWith(
+      titleSmall: fontType.copyWith(
         color: _textColor,
         fontWeight: _bold,
       ),
-      bodyLarge: font.copyWith(
+      bodyLarge: fontType.copyWith(
         color: _textColor,
         fontWeight: _regular,
       ),
-      bodyMedium: font.copyWith(
+      bodyMedium: fontType.copyWith(
         color: _textColor,
         fontWeight: _light,
       ),
-      bodySmall: font.copyWith(
+      bodySmall: fontType.copyWith(
         color: _textColor,
         fontWeight: _light,
       ),
-      labelLarge: font.copyWith(
+      labelLarge: fontType.copyWith(
         color: _textColor,
         fontWeight: _regular,
       ),
-      labelMedium: font.copyWith(
+      labelMedium: fontType.copyWith(
         color: _textColor,
         fontWeight: _light,
       ),
-      labelSmall: font.copyWith(
+      labelSmall: fontType.copyWith(
         color: _textColor,
         fontWeight: _light,
       ),

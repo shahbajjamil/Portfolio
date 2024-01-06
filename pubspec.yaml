@@ -43,6 +43,7 @@ dependencies:
   provider: ^6.1.1
   layout: ^1.0.5
   url_launcher: ^6.2.2
+  feather_icons: ^1.2.0
 
 dev_dependencies:
   flutter_test:

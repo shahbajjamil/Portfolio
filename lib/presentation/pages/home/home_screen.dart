@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/values/values.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
-import 'sections/nav_section/nav_bar.dart';
+import '../../widgets/nav_item.dart';
+import 'sections/nav_section/nav_bar_mobile.dart';
+import 'sections/nav_section/nav_bar_web.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,25 +22,40 @@ class _HomePage extends State<HomePage> {
     NavItemData(name: AppConst.awards, key: GlobalKey()),
     NavItemData(name: AppConst.blog, key: GlobalKey()),
   ];
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
       children: [
-        NavBar(navItems: navItems,),
+        ResponsiveBuilder(
+          refinedBreakpoints: const RefinedBreakpoints(),
+          builder: (context, sizingInformation) {
+            double screenWidth = sizingInformation.screenSize.width;
+            if (screenWidth < const RefinedBreakpoints().desktopSmall) {
+              return NavBarMobile(scaffoldKey: _scaffoldKey);
+            } else {
+              return NavBarWeb(navItems: navItems);
+            }
+          },
+        ),
+        // NavBarWeb(
+        //   navItems: navItems,
+        // ),
       ],
     ));
   }
 }
 
-class NavItemData {
-  final String name;
-  final GlobalKey key;
-  bool isSelected;
+// class NavItemData {
+//   final String name;
+//   final GlobalKey key;
+//   bool isSelected;
 
-  NavItemData({
-    required this.name,
-    required this.key,
-    this.isSelected = false,
-  });
-}
+//   NavItemData({
+//     required this.name,
+//     required this.key,
+//     this.isSelected = false,
+//   });
+// }
