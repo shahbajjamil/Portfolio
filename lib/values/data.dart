@@ -29,32 +29,56 @@ class Data {
     // ),
   ];
 
-  // static List<SocialButton2Data> socialData2 = [
-  //   SocialButton2Data(
-  //     title: AppConst.BEHANCE,
-  //     iconData: FontAwesomeIcons.behance,
-  //     url: AppConst.BEHANCE_URL,
-  //     titleColor: AppColors.blue300,
-  //     buttonColor: AppColors.blue300,
-  //     iconColor: AppColors.white,
-  //   ),
-  //   SocialButton2Data(
-  //     title: AppConst.DRIBBLE,
-  //     iconData: FontAwesomeIcons.dribbble,
-  //     url: AppConst.DRIBBLE_URL,
-  //     titleColor: AppColors.pink300,
-  //     buttonColor: AppColors.pink300,
-  //     iconColor: AppColors.white,
-  //   ),
-  //   SocialButton2Data(
-  //     title: AppConst.INSTA,
-  //     iconData: FontAwesomeIcons.instagram,
-  //     url: AppConst.INSTAGRAM_URL,
-  //     titleColor: AppColors.yellow300,
-  //     buttonColor: AppColors.yellow300,
-  //     iconColor: AppColors.white,
-  //   ),
-  // ];
+  static List<SocialButton2Data> socialData2 = [
+    // SocialButton2Data(
+    //   title: AppConst.BEHANCE,
+    //   iconData: FontAwesomeIcons.behance,
+    //   url: AppConst.BEHANCE_URL,
+    //   titleColor: AppColors.blue300,
+    //   buttonColor: AppColors.blue300,
+    //   iconColor: AppColors.white,
+    // ),
+    // SocialButton2Data(
+    //   title: AppConst.DRIBBLE,
+    //   iconData: FontAwesomeIcons.dribbble,
+    //   url: AppConst.DRIBBLE_URL,
+    //   titleColor: AppColors.pink300,
+    //   buttonColor: AppColors.pink300,
+    //   iconColor: AppColors.white,
+    // ),
+    SocialButton2Data(
+      title: AppConst.INSTA,
+      iconData: FontAwesomeIcons.instagram,
+      url: AppConst.INSTAGRAM_URL,
+      titleColor: AppColors.yellow300,
+      buttonColor: AppColors.yellow300,
+      iconColor: AppColors.white,
+    ),
+    SocialButton2Data(
+      title: AppConst.github,
+      iconData: FontAwesomeIcons.github,
+      url: AppConst.githubURL,
+      titleColor: AppColors.black,
+      buttonColor: AppColors.grey250,
+      iconColor: AppColors.black,
+    ),
+    SocialButton2Data(
+      title: AppConst.linkedIn,
+      iconData: FontAwesomeIcons.linkedin,
+      url: AppConst.LINKED_IN_URL,
+      titleColor: AppColors.blue300,
+      buttonColor: AppColors.blue300,
+      iconColor: AppColors.white,
+    ),
+    SocialButton2Data(
+      title: AppConst.youtube,
+      iconData: FontAwesomeIcons.youtube,
+      url: AppConst.youtubeURL,
+      titleColor: AppColors.red,
+      buttonColor: AppColors.red,
+      iconColor: AppColors.white,
+    ),
+  ];
 
   // static List<SkillLevelData> skillLevelData = [
   //   SkillLevelData(

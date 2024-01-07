@@ -5,9 +5,11 @@ import 'package:portfolio/utils/functions.dart';
 import 'package:portfolio/values/app_images.dart';
 import 'package:portfolio/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 import '../../widgets/app_drawer.dart';
 import '../../widgets/nav_item.dart';
+import 'sections/about_me_section.dart';
 import 'sections/header_section/header_section.dart';
 import 'sections/nav_section/nav_bar_mobile.dart';
 import 'sections/nav_section/nav_bar_web.dart';
@@ -120,20 +122,20 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                           children: [
                             HeaderSection(key: navItems[0].key),
                             SizedBox(height: spacerHeight),
-                            // VisibilityDetector(
-                            //   key: Key("about"),
-                            //   onVisibilityChanged: (visibilityInfo) {
-                            //     double visiblePercentage =
-                            //         visibilityInfo.visibleFraction * 100;
-                            //     if (visiblePercentage > 10) {
-                            //       _controller.forward();
-                            //     }
-                            //   },
-                            //   child: Container(
-                            //     key: navItems[1].key,
-                            //     child: AboutMeSection(),
-                            //   ),
-                            // ),
+                            VisibilityDetector(
+                              key: const Key("about"),
+                              onVisibilityChanged: (visibilityInfo) {
+                                double visiblePercentage =
+                                    visibilityInfo.visibleFraction * 100;
+                                if (visiblePercentage > 10) {
+                                  _controller.forward();
+                                }
+                              },
+                              child: Container(
+                                key: navItems[1].key,
+                                child: const AboutMeSection(),
+                              ),
+                            ),
                           ],
                         )
                       ],

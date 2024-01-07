@@ -32,10 +32,12 @@ class AppConst {
   static const String ABOUT_ME_1 =
       "Product Designer and Digital Creative Director working in design field for";
   static const String ABOUT_ME_2 =
-      "13 years so far, specialized in UI/UX, Branding and digital designs.";
+      "13 years so far, specialized in UI/UX, Bran  ding and digital designs.";
   static const String DOWNLOAD_CV = "Download CV";
   static const String email = "Email";
   // static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
+  static const String linkedIn = "LinkedIn";
+  static const String youtube = "Youtube";
   static const String github = "Github";
   static const String githubId = "github.com/shahbajjamil";
   static const String hireMeNow = "Hire Me Now";
