@@ -207,7 +207,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               constraints:
                                   BoxConstraints(maxWidth: screenWidth * 0.5),
                               child: SelectableText(
-                                AppConst.ABOUT_DEV,
+                                AppConst.aboutDev,
                                 style: bodyTextStyle?.copyWith(
                                   height: 1.5,
                                   // color: AppColors.black,

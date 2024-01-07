@@ -17,12 +17,13 @@ class CustomLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //NOTE: this is a workaround for the issue with Link not working on web
     return Link(
       uri: Uri.parse(url),
       target: linkTarget,
       builder: (context, followLink) {
         return InkWell(
-          onTap: () => followLink,
+          onTap: () => followLink!.call(),
           child: child,
         );
       },

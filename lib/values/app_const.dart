@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 part of values;
 
 class AppConst {
@@ -27,8 +29,8 @@ class AppConst {
   static const String position2 = "IOS Developer";
   static const String position3 = "Web Developer";
   static const String position4 = "Flutter Developer";
-  static const String ABOUT_DEV =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs.";
+  static const String aboutDev =
+      "A passionate Flutter developer dedicated to crafting seamless and stunning mobile applications. With a keen eye for design and a love for clean code, I specialize in creating cross-platform experiences that captivate users.";
   static const String ABOUT_ME_1 =
       "Product Designer and Digital Creative Director working in design field for";
   static const String ABOUT_ME_2 =
@@ -60,7 +62,7 @@ class AppConst {
   static const String THERE = "There!";
   static const String ABOUT_ME = "about me";
   static const String ABOUT_ME_DESC =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs. These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful. beautifully, too.";
+      "A dedicated Flutter developer with four years of hands-on experience in shaping dynamic applications spanning Android, iOS, web, and desktop platforms. In my journey, I've honed my skills to merge functionality with elegance, striving to create not only seamless but also visually captivating user experiences. My expertise lies in the mastery of Flutter, Dart, Android, iOS, and web technologies, enabling me to deliver cross-platform solutions that cater to diverse user needs.";
   static const String ABOUT_ME_DESC_1 =
       "Product Designer and Digital Creative Director working in design ";
   static const String ABOUT_ME_DESC_2 =
@@ -71,7 +73,8 @@ class AppConst {
       "story we tell, every brand we build, and every interaction we";
   static const String ABOUT_ME_DESC_5 =
       "create must not only look beautiful. beautifully, too.";
-  static const String CREATIVE_DESIGN = "Need Creative Design?";
+  static const String CREATIVE_DESIGN =
+      "Looking for an Exceptional Application?";
   static const String HELP = "I can Help You!";
   static const String FOLLOW_ME_1 = "You can also follow me here:";
   static const String DRIBBLE = "Dribble";
@@ -203,7 +206,7 @@ class AppConst {
 
   static const String LINKED_IN_URL = "https:linkedin.com/in/shahbaj-jamil";
   static const String INSTAGRAM_URL = "https://www.instagram.com/shahbajjamil";
-  static const String youtubeURL = "https://www.youtube.com/@strenghtcode";
+  static const String youtubeURL = "https://www.youtube.com/@strengthcode";
   static const String githubURL = "https://github.com/shahbajjamil";
   static const String FACEBOOK_URL = "https://facebook.com/shahbajjamil";
   static const String TWITTER_URL = "http://twitter.com/shahbajjamil";

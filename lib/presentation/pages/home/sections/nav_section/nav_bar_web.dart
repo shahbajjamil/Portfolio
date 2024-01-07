@@ -92,9 +92,7 @@ class _NavBarWebState extends State<NavBarWeb> {
           const Spacer(),
 
           // Image.asset(AppImage.logo),
-          ..._buildNavItems(
-            widget.navItems,
-          ),
+          ..._buildNavItems(widget.navItems),
 
           if (spacer) Spacer(flex: menuSpacerRight),
 
