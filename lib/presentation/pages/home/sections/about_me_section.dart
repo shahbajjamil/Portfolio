@@ -3,7 +3,7 @@ import 'package:portfolio/presentation/layout/adaptive.dart';
 import 'package:portfolio/presentation/widgets/buttons/social_button_2.dart';
 import 'package:portfolio/presentation/widgets/content_area.dart';
 import 'package:portfolio/presentation/widgets/empty.dart';
-import 'package:portfolio/presentation/widgets/nimbus_info_section.dart';
+import 'package:portfolio/presentation/widgets/custom_info_section.dart';
 import 'package:portfolio/presentation/widgets/spaces.dart';
 import 'package:portfolio/utils/functions.dart';
 import 'package:portfolio/values/app_images.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/presentation/layout/adaptive.dart';
+import 'package:portfolio/presentation/pages/home/sections/statistics_section.dart';
 import 'package:portfolio/utils/functions.dart';
 import 'package:portfolio/values/app_images.dart';
 import 'package:portfolio/values/values.dart';
@@ -13,6 +14,7 @@ import 'sections/about_me_section.dart';
 import 'sections/header_section/header_section.dart';
 import 'sections/nav_section/nav_bar_mobile.dart';
 import 'sections/nav_section/nav_bar_web.dart';
+import 'sections/skills_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -140,9 +142,36 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                         )
                       ],
                     ),
-                    // AboutSection(),
-                    // ServicesSection(),
-                    // ProjectsSection(),
+                    SizedBox(height: spacerHeight),
+                    Stack(
+                      children: [
+                        Positioned(
+                          top: assignWidth(context, 0.1),
+                          left: -assignWidth(context, 0.05),
+                          child: Image.asset(AppImage.BLOB_FEMUR_ASH),
+                        ),
+                        Positioned(
+                          right: -assignWidth(context, 0.5),
+                          child: Image.asset(AppImage.BLOB_SMALL_BEAN_ASH),
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              key: navItems[2].key,
+                              child: const SkillsSection(),
+                            ),
+                            SizedBox(height: spacerHeight),
+                            const StatisticsSection(),
+                            SizedBox(height: spacerHeight),
+                            // Container(
+                            //   key: navItems[3].key,
+                            //   child: const ProjectsSection(),
+                            // ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: spacerHeight),
                     // AwardsSection(),
                     // BlogSection(),
                   ],

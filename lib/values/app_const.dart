@@ -82,7 +82,7 @@ class AppConst {
 
   //Skills Section
   static const String MY_SKILLS = "my skills";
-  static const String SKILLS_TITLE_1 = "What My Design";
+  static const String SKILLS_TITLE_1 = "What My Development";
   static const String SKILLS_TITLE_2 = "Skills Include";
   static const String SKILLS_DESC =
       "These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful.";
@@ -92,18 +92,18 @@ class AppConst {
   static const String TOOLS_2_PROFICIENCY = "90%";
   static const String TOOLS_3_NAME = "Sketch";
   static const String TOOLS_3_PROFICIENCY = "70%";
-  static const String SKILLS_1 = "UI/UX Design";
+  static const String SKILLS_1 = "Flutter Development";
   static const String SKILLS_1_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_2 = "Graphic Design";
+      "In-depth knowledge and hands-on experience with the Flutter framework, including widgets, state management, and the overall development lifecycle.";
+  static const String SKILLS_2 = "Cross-Platform Development";
   static const String SKILLS_2_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_3 = "Motion Design";
+      "Expertise in developing cross-platform applications for Android and iOS, ensuring a consistent user experience across different devices.";
+  static const String SKILLS_3 = "Figma Design";
   static const String SKILLS_3_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_4 = "Photo Retouch";
+      "Strong understanding of user interface and user experience design principles to create visually appealing and user-friendly applications";
+  static const String SKILLS_4 = "Git & Github";
   static const String SKILLS_4_DESC =
-      "We believe direct collaboration with our clients is essential to bringing unique";
+      "Knowledge of version control systems, particularly Git, to manage and collaborate on code repositories effectively";
 
   //Stats Section
   static const String HAPPY_CLIENTS = "Happy Clients";
@@ -114,6 +114,8 @@ class AppConst {
   static const String INCREDIBLE_PROJECTS_NUM = "230";
   static const String AWARD_WINNING = "Award Winning";
   static const String AWARD_WINNING_NUM = "18";
+  static const String YOUTUBE_SUB = "Youtube Subscribers";
+  static const String YOUTUBE_VIDEO = "Youtube Videos";
 
   //Projects Section
   static const String MEET_MY_PROJECTS = "Meet My Projects";
